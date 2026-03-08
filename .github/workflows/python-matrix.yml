@@ -15,10 +15,10 @@ jobs:
           - name: setup python3.13
             uses: actions/setup-python@4
             with:
-              pythone-version: "3.3"
+              pythone-version: "3.13"
 
           - name: install dependecies
             run: pip install -r requirements.txt
 
           - name: run linter
-            run: flake8 app.y
+            run: flake8 app.py
