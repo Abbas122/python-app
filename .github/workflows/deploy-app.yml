@@ -8,9 +8,9 @@ jobs:
         DOCKERHUB_USER : ${{vars.DOCKER_USERNAME}}
       runs-on: self-hostet
       steps:
-        - name: checkout code
-          uses: action/checkout@v4
-
+        - name: Checkout code
+          uses: actions/checkout@v4
+        
         - name: deloy with docker compose
           run: docker compose up -d  --build
   
