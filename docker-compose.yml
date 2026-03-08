@@ -1,0 +1,5 @@
+services:
+  web:
+    image: ${{DOCKERHUB_USER}}/pythobn-flask-app:lates
+    ports:
+      - "5000:5000"
