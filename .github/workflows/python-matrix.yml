@@ -1,0 +1,24 @@
+name: python-matrix
+
+on:
+  push:
+     branches: [main]
+
+jobs:
+  validation:
+      runs-on: ubuntu-latest
+
+      steps:
+          - name: code checkOut 
+            uses: action/checkout@v4
+
+          - name: setup python3.13
+            uses: action/setup-python@5
+            with:
+              pythone-version: "3.3"
+
+          - name: install dependecies
+            run: pip install -r requirements.txt
+
+          - name: run linter
+            run: flake8 app.y
