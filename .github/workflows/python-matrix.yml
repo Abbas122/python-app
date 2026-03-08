@@ -1,12 +1,16 @@
 name: python-matrix
 
+
 on:
   push:
+  
      branches: [main]
 
 jobs:
+
   validation:
       runs-on: ubuntu-latest
+
 
       steps:
           - name: code checkOut 
