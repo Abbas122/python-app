@@ -6,6 +6,9 @@ jobs:
     deploy:
       runs-on: self-hostet
       steps:
-        - name: 
-          run: 
+        - name: checkout code
+          run: action/checkout@v4
+
+        - name: deloy with docker compose
+          run: docker compose up -d  --build
   
