@@ -11,7 +11,6 @@ def home():
 @app.route("/about")
 def about():
     return "This is a small Python website project."
-    
 
 
 if __name__ == "__main__":
