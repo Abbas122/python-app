@@ -1,5 +1,7 @@
 services:
   web:
-    image: ${DOCKERHUB_USER}/python-flask-app:${DOCKER_TAG}
+    image: .
     ports:
       - "5000:5000"
+
+# ${DOCKERHUB_USER}/python-flask-app:${DOCKER_TAG}
