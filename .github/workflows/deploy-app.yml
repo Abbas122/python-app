@@ -14,5 +14,5 @@ jobs:
 
         
         - name: deloy with docker compose
-          run: docker compose down || docker compose up -d  --build
+          run: docker compose up -d  --build
   
