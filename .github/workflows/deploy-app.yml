@@ -11,10 +11,7 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v4
 
-        - name: Stop existing containers
-          run: |
-           docker compose down || echo "No containers to stop"
         
         - name: deloy with docker compose
-          run: docker compose up -d  --build
+          run: docker compose down || docker compose up -d  --build
   
