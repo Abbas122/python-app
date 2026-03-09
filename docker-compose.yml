@@ -2,4 +2,4 @@ services:
   web:
     image: ${DOCKERHUB_USER}/python-flask-app:latest
     ports:
-      - "5000:5000"
+      - "3000:5000"
