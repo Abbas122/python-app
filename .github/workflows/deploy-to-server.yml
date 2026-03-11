@@ -1,0 +1,19 @@
+name: Deploye To Server
+
+on: workflow_call
+
+
+jobs:
+   deploye:
+     runs-on: ubuntu-latest
+     steps:
+       - name: SSH to  Server
+         uses: appleboy/ssh-action@v1.0.3
+         with:
+            host: ${{ secrets.EC2_HOST }}
+            username: ${{ secrets.EC2_USERNAME }}
+            key: ${{ secrets.SSH_PRIVATE_KEY}}
+            script: |
+              echo "Starting Deployement"
+              mkdir devops121212
+            
