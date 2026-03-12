@@ -22,4 +22,5 @@ jobs:
     Travy:
      needs: [Docker-Build-Push]
      uses: ./.github/workflows/images-scan.yml
+     secrets: inherit
         
