@@ -16,7 +16,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Trivy Scanner
-        uses: aquasecurity/trivy-action@0.35.1
+        uses: aquasecurity/trivy-action@0.35.0
         with:
           scan-type: image
           scan-ref: ${{ vars.DOCKER_USERNAME }}/python-flask-app:${{ github.sha }}
