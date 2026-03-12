@@ -18,9 +18,9 @@ jobs:
             username: ${{ secrets.EC2_USERNAME }}
             key: ${{ secrets.SSH_PRIVATE_KEY}}
             script: |
-               mkdir /home/ubuntu/python-flask-app
-               cd /home/ubuntu/python-flask-app     # path to your app on server
-               docker pull cusit/python-flask-app:latest
+               mkdir -p /home/ubuntu/python-flask-app
+               cd /home/ubuntu/python-flask-app     # path to your app on server               
+               docker pull cusit/python-flask-app:${{github.sha}}
               # docker run -d -p 5000:5000 cusit/python-flask-app:${{github.sha}}               
               # #Docker-compose up -d --build  
       
