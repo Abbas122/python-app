@@ -19,9 +19,12 @@ jobs:
             key: ${{ secrets.SSH_PRIVATE_KEY}}
             script: |
                mkdir -p /home/ubuntu/python-flask-app
-               cd /home/ubuntu/python-flask-app     # path to your app on server               
+               cd /home/ubuntu/python-flask-app     # path to your app on server
+               docker image prune -f
+               docker stop python-flask-app || true
+               docker rm python-flask-app || true
                docker pull cusit/python-flask-app:${{github.sha}}
-               docker run -d -p 5000:5000 cusit/python-flask-app:${{github.sha}}               
+               docker run -d -p 5000:5000 --name python-flask-app cusit/python-flask-app:${{github.sha}}               
               # #Docker-compose up -d --build  
       
           
