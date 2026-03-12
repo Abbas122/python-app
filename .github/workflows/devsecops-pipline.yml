@@ -23,4 +23,10 @@ jobs:
      needs: [Docker-Build-Push]
      uses: ./.github/workflows/images-scan.yml
      secrets: inherit
+
+     
+    deploye:
+     needs: [Travy]
+     uses: ./.github/workflows/deploy-to-server.yml
+     secrets: inherit
         
