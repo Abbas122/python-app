@@ -7,13 +7,26 @@ jobs:
    deploye:
      runs-on: ubuntu-latest
      steps:
-       - name: SSH to  Server
-         uses: appleboy/ssh-action@v1.0.3
-         with:
+
+        - name: Code checkOut
+          uses: actions/checkout@v4
+          
+        - name: SSH to  Server
+          uses: appleboy/ssh-action@v1.0.3
+          with:
             host: ${{ secrets.EC2_HOST }}
             username: ${{ secrets.EC2_USERNAME }}
             key: ${{ secrets.SSH_PRIVATE_KEY}}
             script: |
-              echo "Starting Deployement"
-              mkdir devops121212
+               cd /home/ubuntu/python-flask-app      # path to your app on server
+               docker-compose pull                  # pull latest images
+               docker-compose up -d --build         # build & run containers in background
+               docker ps    
+          
+           
+            
+            
+            #script: |
+             # echo "Starting Deployement"
+              #mkdir devops121212
             
