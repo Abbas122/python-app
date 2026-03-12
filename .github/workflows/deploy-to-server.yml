@@ -20,7 +20,8 @@ jobs:
             script: |
                mkdir /home/ubuntu/python-flask-app
                cd /home/ubuntu/python-flask-app     # path to your app on server
-               docker pull cusit/python-flask-app:latest
+               docker run -d -p 5000:5000 cusit/python-flask-app:latest
+               # docker pull cusit/python-flask-app:latest
                Docker-compose up -d --build  
           
            
