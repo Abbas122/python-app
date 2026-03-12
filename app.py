@@ -11,4 +11,3 @@ def home():
 @app.route("/about")
 def about():
     return "This is a small Python website project."
-    
