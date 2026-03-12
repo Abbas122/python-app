@@ -18,4 +18,8 @@ jobs:
      needs: [code-quality,secretes-scan,dependencies-scane,docker-lint]
      uses: ./.github/workflows/docker-work-flows.yml
      secrets: inherit
+
+    Travy:
+     needs: [Docker-Build-Push]
+     uses: ./.github/workflows/images-scan.yml
         
