@@ -8,16 +8,13 @@
         validate-dockerfile:
             runs-on: ubuntu-latest
             steps:
-             - name: Checkout code
-            #   uses: actions/checkout@v4
+             - name: Checkout code          
                uses: actions/checkout@v4
 
             
-             - name: validate Dockerfile
-              # uses: hadolint/hadolint-action@v3.0.0
+             - name: Lint Dockerfile
                uses: hadolint/hadolint-action@v3
                with:
-                 #dockerfile: Dockerfile
-                 dockerfile: Dockerfile
+                 dockerfile: ./Dockerfile
 
       
